@@ -4,10 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mobile store</title>
-    <link rel="stylesheet" href="styl.css">
-    <link rel="stylesheet" href="scrip.js">
-
+    <title>Mobile Store</title>
 
     <style>
         * {
@@ -18,19 +15,27 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #000;
+            color: #e0e0e0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding: 0 15px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: #222;
             padding: 20px;
-            color: white;
+            border-bottom: 1px solid #444;
         }
 
         .logo {
@@ -54,7 +59,7 @@
 
         header nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #e0e0e0;
             font-size: 16px;
         }
 
@@ -63,47 +68,34 @@
         }
 
         .section {
-            padding: 40px;
+            padding: 40px 15px;
             text-align: center;
-            animation: fadeIn 1s ease-in-out;
         }
 
         #about, #promo {
-            background-color: #fff;
+            background-color: #111;
         }
 
         #products {
-            background-color: #f9f9f9;
+            background-color: #222;
         }
 
         .product-list {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
 
         .product-card {
-            background-color: #fff;
+            background-color: #333;
             border-radius: 10px;
             padding: 20px;
-            width: 250px;
+            width: 100%;
+            max-width: 300px;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s, box-shadow 0.3s;
-            opacity: 0;
-            animation: fadeIn 0.5s ease-out forwards;
-        }
-
-        .product-card:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .product-card:nth-child(2) {
-            animation-delay: 0.5s;
-        }
-
-        .product-card:nth-child(3) {
-            animation-delay: 0.7s;
         }
 
         .product-card img {
@@ -114,7 +106,7 @@
 
         .product-card:hover img {
             transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.75);
         }
 
         .product-card:hover {
@@ -123,15 +115,15 @@
 
         h2 {
             font-size: 2rem;
-            color: #333;
+            color: #f0f0f0;
             margin-bottom: 20px;
-            border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid #444;
             padding-bottom: 10px;
         }
 
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #222;
+            color: #e0e0e0;
             padding: 20px;
             text-align: center;
             margin-top: auto;
@@ -139,6 +131,7 @@
 
         footer ul {
             list-style-type: none;
+            padding: 0;
         }
 
         footer ul li {
@@ -147,101 +140,90 @@
 
         footer ul li a {
             text-decoration: none;
-            color: white;
+            color: #e0e0e0;
         }
 
         footer ul li a:hover {
             text-decoration: underline;
         }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(50px);
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
             }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
+
+            header nav ul {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+
+            header nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
             }
         }
     </style>
 
-
 </head>
-
-
 <body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Cég Logo">
+            <h1>Mobile Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Rólunk</a></li>
+                <li><a href="#products">Termékek</a></li>
+                <li><a href="#promo">Miért Minket?</a></li>
+                <li><a href="#footer">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="container">
+        <section id="about" class="section">
+            <h2>Mobil Store</h2>
+            <p>A Mobile Store célja, hogy a legjobb élményt nyújtsa ügyfeleinek a technológia és a versenyképes árak kombinációjával.</p>
+        </section>
 
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Cég Logo">
-        <h1>Mobile Store</h1>
+        <section id="products" class="section">
+            <h2>Kiemelkedő Termékeink</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="kep1.jpg" alt="Phone 1">
+                    <h3>Telefon 1</h3>
+                    <p><a href="https://www.xd.com/">Termékleírás.</a></p>
+                </div>
+                <div class="product-card">
+                    <img src="kep2.jpg" alt="Phone 2">
+                    <h3>Telefon 2</h3>
+                    <p><a href="https://www.xd.com/">Termékleírás.</a></p>
+                </div>
+                <div class="product-card">
+                    <img src="kep3.jpg" alt="Phone 3">
+                    <h3>Telefon 3</h3>
+                    <p><a href="https://www.xd.com/">Termékleírás.</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="promo" class="section">
+            <h2>Miért Minket Válassza?</h2>
+            <p>Mi garantáljuk a gyors szállítást, versenyképes árakat, és a legújabb mobiltelefonokat.</p>
+        </section>
     </div>
-    <nav>
+
+    <footer id="footer">
         <ul>
-            <li><a href="#about">Rólunk</a></li>
-            <li><a href="#products">Termékek</a></li>
-            <li><a href="#promo">Miért Minket?</a></li>
-            <li><a href="#footer">Kapcsolat</a></li>
+            <li><a href="#">Általános Szerződési Feltételek</a></li>
+            <li><a href="#">Segítségkérés</a></li>
         </ul>
-    </nav>
-</header>
+    </footer>
 
-
-<section id="about" class="section">
-    <h2>Rólunk</h2>
-    <p>
-        Cégünk a legjobb mobiltelefonokat és tartozékokat kínálja elérhető áron. 
-        Ügyfeleink számára mindig a legújabb modelleket és legjobb ajánlatokat biztosítjuk.
-    </p>
-</section>
-
-
-<section id="products" class="section">
-    <h2>Termékeink</h2>
-    <div class="product-list">
-        <div class="product-card">
-            <img src="kep1.jpg" alt="Phone 1">
-            <h3>Telefon 1</h3>
-            <p>Ez a telefon egy erős és gyors eszköz, ideális mindennapi használatra.</p>
-        </div>
-        <div class="product-card">
-            <img src="kep2.jpg" alt="Phone 2">
-            <h3>Telefon 2</h3>
-            <p>Modern design, hosszú akkumulátor élettartam.</p>
-        </div>
-        <div class="product-card">
-            <img src="kep3.jpg" alt="Phone 3">
-            <h3>Telefon 3</h3>
-            <p>Szuper kamera és gyors processzor a legjobb élményért.</p>
-        </div>
-    </div>
-</section>
-
-
-<section id="promo" class="section">
-    <h2>Miért Minket Válassza?</h2>
-    <p>Mi garantáljuk a gyors szállítást, versenyképes árakat, és a legújabb mobiltelefonokat.</p>
-    <ul>
-        <li>Ingyenes szállítás</li>
-        <li>Garantált terméktámogatás</li>
-        <li>Versenyképes árak</li>
-    </ul>
-</section>
-
-
-<footer id="footer">
-    <ul>
-        <li><a href="#">Általános Szerződési Feltételek</a></li>
-        <li><a href="#">Segítségkérés</a></li>
-    </ul>
-</footer>
-
-
-<script>
-
-window.addEventListener('scroll', () => {
+    <script>
+        window.addEventListener('scroll', () => {
     const products = document.querySelectorAll('.product-card');
     products.forEach(product => {
         const productPosition = product.getBoundingClientRect().top;
@@ -251,9 +233,6 @@ window.addEventListener('scroll', () => {
         }
     });
 });
-
-</script>
-
-
+    </script>
 </body>
 </html>
